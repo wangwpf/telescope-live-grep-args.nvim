@@ -6,8 +6,8 @@ local live_grep_args = require("telescope").extensions.live_grep_args
 local helpers = require("telescope-live-grep-args.helpers")
 
 local function get_visual()
-  local _, ls, cs = unpack(vim.fn.getpos("v"))
-  local _, le, ce = unpack(vim.fn.getpos("."))
+  local _, ls, cs = unpack(vim.fn.getpos("'<"))
+  local _, le, ce = unpack(vim.fn.getpos("'>"))
 
   -- nvim_buf_get_text requires start and end args be in correct order
   ls, le = math.min(ls, le), math.max(ls, le)
